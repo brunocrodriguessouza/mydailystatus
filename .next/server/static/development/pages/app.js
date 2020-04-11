@@ -133,31 +133,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib_auth0__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/auth0 */ "./lib/auth0.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/home/bruno/devpleno/mydailystatus/pages/app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const App = props => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (!props.isAuth) {
+      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/');
+    }
+  });
+
+  if (!props.isAuth) {
+    return null;
+  }
+
   return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
+      lineNumber: 16,
       columnNumber: 5
     }
   }, __jsx("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 17,
       columnNumber: 7
     }
   }, "App"), console.log(props), __jsx("pre", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 19,
       columnNumber: 7
     }
   }, JSON.stringify(props, null, 2)));
@@ -173,6 +186,7 @@ async function getServerSideProps({
   if (session) {
     return {
       props: {
+        isAuth: true,
         user: session.user
       }
     };
@@ -180,6 +194,7 @@ async function getServerSideProps({
 
   return {
     props: {
+      isAuth: false,
       user: {}
     }
   };
@@ -207,6 +222,17 @@ module.exports = __webpack_require__(/*! /home/bruno/devpleno/mydailystatus/page
 /***/ (function(module, exports) {
 
 module.exports = require("@auth0/nextjs-auth0");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
