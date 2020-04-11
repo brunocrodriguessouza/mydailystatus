@@ -50,7 +50,7 @@ var _this = undefined,
     _jsxFileName = "/home/bruno/devpleno/mydailystatus/pages/app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import auth0 from '../lib/auth0';
+
 
 var App = function App(props) {
   return __jsx("div", {
@@ -67,11 +67,11 @@ var App = function App(props) {
       lineNumber: 7,
       columnNumber: 7
     }
-  }, "App"), __jsx("pre", {
+  }, "App"), console.log(props), __jsx("pre", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 9,
       columnNumber: 7
     }
   }, JSON.stringify(props, null, 2)));

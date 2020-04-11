@@ -1981,7 +1981,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 const App = ({
   Component,
-  PageProps
+  pageProps
 }) => {
   return __jsx("div", {
     __self: undefined,
@@ -2005,7 +2005,7 @@ const App = ({
       lineNumber: 10,
       columnNumber: 7
     }
-  }, __jsx(Component, _extends({}, PageProps, {
+  }, __jsx(Component, _extends({}, pageProps, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,

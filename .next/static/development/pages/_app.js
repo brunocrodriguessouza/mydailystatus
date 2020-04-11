@@ -4937,7 +4937,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 var App = function App(_ref) {
   var Component = _ref.Component,
-      PageProps = _ref.PageProps;
+      pageProps = _ref.pageProps;
   return __jsx("div", {
     __self: _this,
     __source: {
@@ -4960,7 +4960,7 @@ var App = function App(_ref) {
       lineNumber: 10,
       columnNumber: 7
     }
-  }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, PageProps, {
+  }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,

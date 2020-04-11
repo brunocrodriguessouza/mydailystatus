@@ -3,12 +3,12 @@ import '../styles/styles.css';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-const App = ({ Component, PageProps }) => {
+const App = ({ Component, pageProps }) => {
   return (
     <div>
       <Header />
       <div className='min-h-screen container mx-auto'>
-        <Component {...PageProps} />
+        <Component {...pageProps} />
       </div>
       <Footer />
     </div>

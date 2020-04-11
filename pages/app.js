@@ -1,10 +1,11 @@
 import React from 'react';
-// import auth0 from '../lib/auth0';
+import auth0 from '../lib/auth0';
 
-const App = (props) => {
+const App = props => {
   return (
     <div>
       <h1>App</h1>
+      {console.log(props)}
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </div>
   )
@@ -12,12 +13,18 @@ const App = (props) => {
 
 export default App;
 
-export async function getServerSideProps({ request, response }) {
+export async function getServerSideProps({ req, res }) {
+  const session = await auth0.getSession(req);
+  if (session) {
+    return {
+      props: {
+        user: session.user
+      }
+    }
+  }
   return {
     props: {
-      user: {
-        name: 'Bruno'
-      }
+      user: {}
     }
   }
 }

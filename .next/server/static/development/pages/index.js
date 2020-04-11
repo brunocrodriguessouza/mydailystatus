@@ -88,125 +88,66 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./lib/auth0.js":
-/*!**********************!*\
-  !*** ./lib/auth0.js ***!
-  \**********************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _auth0_nextjs_auth0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @auth0/nextjs-auth0 */ "@auth0/nextjs-auth0");
-/* harmony import */ var _auth0_nextjs_auth0__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_auth0_nextjs_auth0__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(_auth0_nextjs_auth0__WEBPACK_IMPORTED_MODULE_0__["initAuth0"])({
-  clientId: process.env.AUTH0_CLIENT_ID,
-  clientSecret: process.env.AUTH0_CLIENT_SECRET,
-  scope: process.env.AUTH0_SCOPE,
-  domain: process.env.AUTH0_DOMAIN,
-  redirectUri: process.env.AUTH0_REDIRECT_URI,
-  postLogoutRedirectUri: process.env.AUTH0_LOGOUT_REDIRECT_URI,
-  session: {
-    cookieSecret: process.env.AUTH0_SESSION_SECRET,
-    cookieLifetime: process.env.AUTH0_SESSION_COOKIE_TIME
-  }
-}));
-
-/***/ }),
-
-/***/ "./pages/app.js":
-/*!**********************!*\
-  !*** ./pages/app.js ***!
-  \**********************/
-/*! exports provided: default, getServerSideProps */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_auth0__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/auth0 */ "./lib/auth0.js");
-var _jsxFileName = "/home/bruno/devpleno/mydailystatus/pages/app.js";
+var _jsxFileName = "/home/bruno/devpleno/mydailystatus/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-const App = props => {
+const Index = () => {
   return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
+      lineNumber: 5,
       columnNumber: 5
     }
   }, __jsx("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 6,
       columnNumber: 7
     }
-  }, "App"), console.log(props), __jsx("pre", {
+  }, "Home"), __jsx("a", {
+    href: "/api/login",
+    className: "py-4 px-2 rounded bg-pink-800 font-bold shadow-xl hover:shadow block w-1/4 text-center mx-auto text-white",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 7,
       columnNumber: 7
     }
-  }, JSON.stringify(props, null, 2)));
+  }, "Comece por aqui"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
-async function getServerSideProps({
-  req,
-  res
-}) {
-  const session = await _lib_auth0__WEBPACK_IMPORTED_MODULE_1__["default"].getSession(req);
-
-  if (session) {
-    return {
-      props: {
-        user: session.user
-      }
-    };
-  }
-
-  return {
-    props: {
-      user: {}
-    }
-  };
-}
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ 7:
-/*!****************************!*\
-  !*** multi ./pages/app.js ***!
-  \****************************/
+/***/ 4:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/bruno/devpleno/mydailystatus/pages/app.js */"./pages/app.js");
+module.exports = __webpack_require__(/*! /home/bruno/devpleno/mydailystatus/pages/index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "@auth0/nextjs-auth0":
-/*!**************************************!*\
-  !*** external "@auth0/nextjs-auth0" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@auth0/nextjs-auth0");
 
 /***/ }),
 
@@ -222,4 +163,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=index.js.map
